@@ -21,9 +21,18 @@
   <section class="ion-page" id="karten-inhalt">
     <ion-header>
       <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-toggle>
+            <ion-button>
+              <ion-icon slot="icon-only" name="menu"></ion-icon>
+            </ion-button>
+          </ion-menu-toggle>
+        </ion-buttons>
+
         <ion-buttons slot="end">
           <ion-button (click)="onButtonZuruecksetzen()" color="secondary">Darstellung zurücksetzen</ion-button>
         </ion-buttons>
+
         <ion-title>Karte</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -32,8 +41,8 @@
                [longitude]="+mittelpunktGeoLaenge"
                [zoom]="zoomFaktor">
 
-        <agm-marker *ngFor="let eintrag of bundeslandUndHauptstadtArray" 
-                    [latitude]="+eintrag.geoBreite" 
+        <agm-marker *ngFor="let eintrag of bundeslandUndHauptstadtArray"
+                    [latitude]="+eintrag.geoBreite"
                     [longitude]="+eintrag.geoLaenge"
                     (markerClick)="aufMarkerGeklickt(derMarker)">
 
@@ -41,7 +50,7 @@
 
         </agm-marker>
 
-      </agm-map>      
+      </agm-map>
     </ion-content>
   </section>
 
