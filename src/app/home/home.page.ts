@@ -8,11 +8,17 @@ import { Landeshauptstadt } from './../landeshauptstadt';
 })
 export class HomePage {
 
-  /** Geographische Breite von Mittelpunkt von Deutschland, siehe Berechnungsmethode 1 auf https://de.wikipedia.org/wiki/Mittelpunkte_Deutschlands */
-  public aktuellePosGeoBreite = "51.163361";
+  /* Geographische Breite von Mittelpunkt von Deutschland, siehe Berechnungsmethode 1 auf https://de.wikipedia.org/wiki/Mittelpunkte_Deutschlands . */
+  readonly mittelpunktDeutschlandGeoBreite = "51.163361";
 
-  /** Geographische Länge von Mittelpunkt von Deutschland, siehe Berechnungsmethode 1 auf https://de.wikipedia.org/wiki/Mittelpunkte_Deutschlands */  
-  public aktuellePosgeoLaenge = "10.447683";
+  /* Geographische Länge von Mittelpunkt von Deutschland, siehe Berechnungsmethode 1 auf https://de.wikipedia.org/wiki/Mittelpunkte_Deutschlands . */
+  readonly mittelpunktDeutschlandGeoLaenge = "10.447683";
+
+  /** Geographische Breite vom aktuellen Mittelpunkt der Karte. */    
+  public mittelpunktGeoBreite = this.mittelpunktDeutschlandGeoBreite;
+
+  /** Geographische Länge vom aktuellen Mittelpunkt der Karte. */  
+  public mittelpunktGeoLaenge = this.mittelpunktDeutschlandGeoLaenge;
 
   /** Array mit Hauptstädten aller 16 Bundesländern in Deutschland; wird als Marker dargestellt. */
   public hauptstadteArray:Landeshauptstadt[] = [];
