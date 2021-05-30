@@ -9,6 +9,7 @@ export class Landeshauptstadt {
 
     constructor(public stadt: string,
                 public bundesland: string,
+                public istStadtstaat: boolean,
                 public geoBreite: string,
                 public geoLaenge: string) {}
 
@@ -21,6 +22,14 @@ export class Landeshauptstadt {
      */
     public getInfoText(): string {
 
-        return `Landeshauptstadt von ${this.bundesland}`;
+        if (this.istStadtstaat) {
+
+            return `Stadtstaat ${this.bundesland}`;
+
+        } else {
+
+            return `Landeshauptstadt von ${this.bundesland}`;            
+        }
+        
     }                
 }
