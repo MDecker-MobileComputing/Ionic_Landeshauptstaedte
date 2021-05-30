@@ -14,8 +14,12 @@
            [longitude]="+aktuellePosgeoLaenge"
            [zoom]="6">
 
-           <agm-marker *ngFor="let stadt of hauptstadteArray" [latitude]="+stadt.geoBreite" [longitude]="+stadt.geoLaenge">
-              <agm-info-window>{{stadt.getInfoText() }}</agm-info-window>
+           <agm-marker *ngFor="let stadt of hauptstadteArray" 
+                       [latitude]="+stadt.geoBreite" 
+                       [longitude]="+stadt.geoLaenge">
+
+              <agm-info-window>{{stadt.getInfoText()}}</agm-info-window>
+
            </agm-marker>
 
   </agm-map>
