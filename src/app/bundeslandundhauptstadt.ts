@@ -29,7 +29,7 @@ export class BundeslandUndHauptstadt {
      * 
      * @returns Text für Tag `agm-info-window`.
      */
-    public getInfoText(): string {
+    public getTextFuerInfoWindow(): string {
 
         if (this.istStadtstaat) {
 
@@ -38,7 +38,18 @@ export class BundeslandUndHauptstadt {
         } else {
 
             return `Landeshauptstadt von ${this.bundesland}`;            
-        }
-        
-    }                
+        }        
+    }
+    
+    public getKurzbeschreibungFuerListe(): string {
+
+        if (this.istStadtstaat) {
+
+            return `Stadtstaat`;
+
+        } else {
+
+            return `Landeshauptstadt: ${this.stadt}`;            
+        }        
+    }
 }
