@@ -41,6 +41,10 @@ export class BundeslandUndHauptstadt {
         }        
     }
     
+    /**
+     * Liefert Text für kurze Beschreibung unter Listeneintrag zurück.
+     * @returns Entweder "Stadtstaat" oder "Landeshauptstadt: <nameDerStadt>"
+     */
     public getKurzbeschreibungFuerListe(): string {
 
         if (this.istStadtstaat) {
@@ -52,4 +56,5 @@ export class BundeslandUndHauptstadt {
             return `Landeshauptstadt: ${this.stadt}`;            
         }        
     }
+    
 }

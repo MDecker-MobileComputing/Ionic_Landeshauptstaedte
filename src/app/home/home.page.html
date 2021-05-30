@@ -16,26 +16,28 @@
       </ion-list>
     </ion-content>
   </ion-menu>
-  <ion-content contentId="karten-inhalt">
 
-  <!-- 
-        "+" vor "geoBreite" und "geoLaenge" für Umwandlung von String nach Number.
-        Bitte auch die Regel für agm-map in der CSS-Datei beachten, denn ohne diese wird keine Karte angezeigt.
-    -->
-    <agm-map [latitude]="+mittelpunktGeoBreite"
-             [longitude]="+mittelpunktGeoLaenge"
-             [zoom]="zoomFaktor">
+  <section class="ion-page" id="karten-inhalt">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Karte</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <agm-map [latitude]="+mittelpunktGeoBreite"
+               [longitude]="+mittelpunktGeoLaenge"
+               [zoom]="zoomFaktor">
 
-       <agm-marker *ngFor="let eintrag of bundeslandUndHauptstadtArray" 
-                   [latitude]="+eintrag.geoBreite" 
-                   [longitude]="+eintrag.geoLaenge">
+        <agm-marker *ngFor="let eintrag of bundeslandUndHauptstadtArray" 
+                    [latitude]="+eintrag.geoBreite" 
+                    [longitude]="+eintrag.geoLaenge">
 
-         <agm-info-window>{{eintrag.getTextFuerInfoWindow()}}</agm-info-window>
+          <agm-info-window>{{eintrag.getTextFuerInfoWindow()}}</agm-info-window>
 
-       </agm-marker>
+        </agm-marker>
 
-    </agm-map>
-
-  </ion-content>
+      </agm-map>      
+    </ion-content>
+  </section>
 
 </ion-split-pane>
