@@ -10,13 +10,14 @@
         "+" vor "geoBreite" und "geoLaenge" für Umwandlung von String nach Number.
         Bitte auch die Regel für agm-map in der CSS-Datei beachten, denn ohne diese wird keine Karte angezeigt.
     -->
-  <agm-map [latitude]="+geoBreite"
-            [longitude]="+geoLaenge"
-            [zoom]="18">
+  <agm-map [latitude]="+aktuellePosGeoBreite"
+           [longitude]="+aktuellePosgeoLaenge"
+           [zoom]="7">
 
-            <agm-marker [latitude]="+marker1geoBreite" [longitude]="+marker1geoLaenge">
-              <agm-info-window>Landeshauptstadt von Baden-Württemberg</agm-info-window>
-            </agm-marker>
+           <agm-marker *ngFor="let stadt of hauptstadteArray" [latitude]="+stadt.geoBreite" [longitude]="+stadt.geoLaenge">
+              <agm-info-window>{{stadt.getInfoText() }}</agm-info-window>
+           </agm-marker>
+
   </agm-map>
 
 </ion-content>
