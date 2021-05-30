@@ -1,0 +1,7 @@
+{
+  "name": "landeshauptstaedte",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

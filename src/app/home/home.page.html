@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Landeshauptstädte in Deutschland</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- "+" vor "geoBreite" und "geoLaenge" für Umwandlung von String nach Number. -->
+  <agm-map [latitude]="+geoBreite"
+            [longitude]="+geoLaenge"
+            [zoom]="18"/>
+  </agm-map>
+
+</ion-content>
