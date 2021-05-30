@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1622394483566,
+  "timestamp": 1622394954393,
   "index": "https://mdecker-mobilecomputing.github.io/Ionic_Landeshauptstaedte/index.html",
   "assetGroups": [
     {
@@ -168,7 +168,7 @@
     "https://mdecker-mobilecomputing.github.io/Ionic_Landeshauptstaedte/assets/shapes.svg": "5413e95adabcb2cb639970051f55e0ddb64ace53",
     "https://mdecker-mobilecomputing.github.io/Ionic_Landeshauptstaedte/index.html": "29261e069562076118711050d3988f88a66888c9",
     "https://mdecker-mobilecomputing.github.io/Ionic_Landeshauptstaedte/main.8e807b0d35d966817802.js": "609e92da7cc36a150ec4b9fc66487d3143bc55c9",
-    "https://mdecker-mobilecomputing.github.io/Ionic_Landeshauptstaedte/manifest.webmanifest": "9a088b7c4339228d1082e666ce105dc889bc180c",
+    "https://mdecker-mobilecomputing.github.io/Ionic_Landeshauptstaedte/manifest.webmanifest": "caff2598e84ff66625046b75858644448595f517",
     "https://mdecker-mobilecomputing.github.io/Ionic_Landeshauptstaedte/polyfills.b138c754804af4658970.js": "f0460d80a53651a8bf8bb47bd5c4d6a69e957c4e",
     "https://mdecker-mobilecomputing.github.io/Ionic_Landeshauptstaedte/runtime.a6346fdf90f3d42f93cc.js": "7c682d8b003e221fcfd3e259107876fbce9c2805",
     "https://mdecker-mobilecomputing.github.io/Ionic_Landeshauptstaedte/styles.706d9d9c6153ad8cab01.css": "b8e6fe8d90ab766b60ec5b122bac7a2abc0d83e5"
