@@ -7,11 +7,20 @@
  */
 export class Landeshauptstadt {
 
-    constructor(public stadt: string,
-                public bundesland: string,
+    /**
+     * Wenn `istStadtstatt=true`, dann wird Wert von `bundesland` in `stadt` kopiert.
+     */
+    constructor(public bundesland: string,
+                public stadt: string,                
                 public istStadtstaat: boolean,
                 public geoBreite: string,
-                public geoLaenge: string) {}
+                public geoLaenge: string) {
+
+        if (istStadtstaat) {
+
+            stadt = bundesland;
+        }
+    }
 
 
     /**
