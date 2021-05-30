@@ -7,7 +7,7 @@
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item *ngFor="let stadt of hauptstadteArray" button (click)="onBundeslandClick(stadt)">
+        <ion-item *ngFor="let stadt of stadtLandArray" button (click)="onBundeslandClick(stadt)">
            {{stadt.bundesland}}
         </ion-item>
       </ion-list>
@@ -23,7 +23,7 @@
              [longitude]="+mittelpunktGeoLaenge"
              [zoom]="6">
 
-       <agm-marker *ngFor="let stadt of hauptstadteArray" 
+       <agm-marker *ngFor="let stadt of stadtLandArray" 
                    [latitude]="+stadt.geoBreite" 
                    [longitude]="+stadt.geoLaenge">
 

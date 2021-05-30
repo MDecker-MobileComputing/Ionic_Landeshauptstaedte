@@ -1,11 +1,11 @@
 
 /**
- * Ein Objekt dieser Klasse repräsentiert ein Bundesland und seine Hauptstadt.
+ * Ein Objekt dieser Klasse repräsentiert ein Bundesland und die zugehörige Hauptstadt; auch Stadtstaaten werden unterstützt.
  * 
  * Die Koordinatenwerte (Dezimalkooridnaten für geografische Breite und Länge) werden als String gespeichert, 
  * damit es zu keinen Ungenauigkeiten wegen Rundungsfehlern kommen kann.
  */
-export class Landeshauptstadt {
+export class StadtUndLand {
 
     /**
      * Wenn `istStadtstatt=true`, dann wird Wert von `bundesland` in `stadt` kopiert.
