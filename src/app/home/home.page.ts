@@ -13,12 +13,17 @@ export class HomePage {
 
   /* Geographische Länge von Mittelpunkt von Deutschland, siehe Berechnungsmethode 1 auf https://de.wikipedia.org/wiki/Mittelpunkte_Deutschlands . */
   readonly mittelpunktDeutschlandGeoLaenge = "10.447683";
+  
 
   /** Geographische Breite vom aktuellen Mittelpunkt der Karte; wird an Attribut `latitude` vom `agm-map`-Element gebunden. */
   public mittelpunktGeoBreite = this.mittelpunktDeutschlandGeoBreite;
 
   /** Geographische Länge vom aktuellen Mittelpunkt der Karte; wird an Attribut `longitude` vom `agm-map`-Element gebunden. */  
   public mittelpunktGeoLaenge = this.mittelpunktDeutschlandGeoLaenge;
+
+  /** Zoom-Faktor für geographische Karte. */
+  public zoomFaktor = 6;
+
 
   /** Array mit je einem Element für alle 16 Bundesländer+Stadtstaaten in Deutschland. */
   public bundeslandUndHauptstadtArray:BundeslandUndHauptstadt[] = [];
@@ -50,9 +55,14 @@ export class HomePage {
   /**
    * Event-Handler für Klick auf ein Bundesland in der Liste.
    */
-  public onBundeslandClick(stadt: BundeslandUndHauptstadt) {
+  public onBundeslandClick(bundeslandUndHauptstadt: BundeslandUndHauptstadt) {
     
-    console.log(`Geklickt auf ${stadt.bundesland}.`);
+    console.log(`Geklickt auf ${bundeslandUndHauptstadt.bundesland}.`);
+
+    this.mittelpunktGeoBreite = bundeslandUndHauptstadt.geoBreite;
+    this.mittelpunktGeoLaenge = bundeslandUndHauptstadt.geoLaenge;
+
+    this.zoomFaktor = 12;
   }  
 
 }

@@ -24,7 +24,7 @@
     -->
     <agm-map [latitude]="+mittelpunktGeoBreite"
              [longitude]="+mittelpunktGeoLaenge"
-             [zoom]="6">
+             [zoom]="zoomFaktor">
 
        <agm-marker *ngFor="let eintrag of bundeslandUndHauptstadtArray" 
                    [latitude]="+eintrag.geoBreite" 
