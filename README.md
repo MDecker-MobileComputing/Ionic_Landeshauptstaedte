@@ -5,6 +5,10 @@ For displaying of the geographic map the library [Angular Google Maps (AGM)](htt
 
 <br>
 
+The app can be accessed as [PWA](https://www.freecodecamp.org/news/what-are-progressive-web-apps/) at https://mdecker-mobilecomputing.github.io/Ionic_Landeshauptstaedte
+
+<br>
+
 ----
 
 ## License ##
