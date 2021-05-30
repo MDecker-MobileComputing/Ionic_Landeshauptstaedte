@@ -5,7 +5,7 @@
  * Die Koordinatenwerte (Dezimalkooridnaten für geografische Breite und Länge) werden als String gespeichert, 
  * damit es zu keinen Ungenauigkeiten wegen Rundungsfehlern kommen kann.
  */
-export class StadtUndLand {
+export class BundeslandUndHauptstadt {
 
     /**
      * Wenn `istStadtstatt=true`, dann wird Wert von `bundesland` in `stadt` kopiert.
