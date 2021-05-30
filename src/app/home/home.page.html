@@ -1,4 +1,5 @@
 <ion-split-pane contentId="karten-inhalt">
+
   <ion-menu contentId="karten-inhalt">
     <ion-header>
       <ion-toolbar>
@@ -21,7 +22,7 @@
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="end">
-          <ion-button (click)="onButtonZuruecksetzen()">Darstellung zurücksetzen</ion-button>
+          <ion-button (click)="onButtonZuruecksetzen()" color="secondary">Darstellung zurücksetzen</ion-button>
         </ion-buttons>
         <ion-title>Karte</ion-title>
       </ion-toolbar>
@@ -33,9 +34,10 @@
 
         <agm-marker *ngFor="let eintrag of bundeslandUndHauptstadtArray" 
                     [latitude]="+eintrag.geoBreite" 
-                    [longitude]="+eintrag.geoLaenge">
+                    [longitude]="+eintrag.geoLaenge"
+                    (markerClick)="aufMarkerGeklickt(derMarker)">
 
-          <agm-info-window>{{eintrag.getTextFuerInfoWindow()}}</agm-info-window>
+          <agm-info-window #derMarker>{{eintrag.getTextFuerInfoWindow()}}</agm-info-window>
 
         </agm-marker>
 
