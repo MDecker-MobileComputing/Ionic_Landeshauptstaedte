@@ -1,27 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Landeshauptstädte in Deutschland</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
+<ion-split-pane contentId="karten-inhalt">
+  <ion-menu contentId="karten-inhalt">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Bundesländer von Deutschland</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item *ngFor="let stadt of hauptstadteArray" button (click)="onBundeslandClick(stadt)">
+           {{stadt.bundesland}}
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-content contentId="karten-inhalt">
 
   <!-- 
         "+" vor "geoBreite" und "geoLaenge" für Umwandlung von String nach Number.
         Bitte auch die Regel für agm-map in der CSS-Datei beachten, denn ohne diese wird keine Karte angezeigt.
     -->
-  <agm-map [latitude]="+mittelpunktGeoBreite"
-           [longitude]="+mittelpunktGeoLaenge"
-           [zoom]="6">
+    <agm-map [latitude]="+mittelpunktGeoBreite"
+             [longitude]="+mittelpunktGeoLaenge"
+             [zoom]="6">
 
-           <agm-marker *ngFor="let stadt of hauptstadteArray" 
-                       [latitude]="+stadt.geoBreite" 
-                       [longitude]="+stadt.geoLaenge">
+       <agm-marker *ngFor="let stadt of hauptstadteArray" 
+                   [latitude]="+stadt.geoBreite" 
+                   [longitude]="+stadt.geoLaenge">
 
-              <agm-info-window>{{stadt.getInfoText()}}</agm-info-window>
+         <agm-info-window>{{stadt.getInfoText()}}</agm-info-window>
 
-           </agm-marker>
+       </agm-marker>
 
-  </agm-map>
+    </agm-map>
 
-</ion-content>
+  </ion-content>
+
+</ion-split-pane>

@@ -14,10 +14,10 @@ export class HomePage {
   /* Geographische Länge von Mittelpunkt von Deutschland, siehe Berechnungsmethode 1 auf https://de.wikipedia.org/wiki/Mittelpunkte_Deutschlands . */
   readonly mittelpunktDeutschlandGeoLaenge = "10.447683";
 
-  /** Geographische Breite vom aktuellen Mittelpunkt der Karte. */    
+  /** Geographische Breite vom aktuellen Mittelpunkt der Karte; wird an Attribut `latitude` vom `agm-map`-Element gebunden. */
   public mittelpunktGeoBreite = this.mittelpunktDeutschlandGeoBreite;
 
-  /** Geographische Länge vom aktuellen Mittelpunkt der Karte. */  
+  /** Geographische Länge vom aktuellen Mittelpunkt der Karte; wird an Attribut `longitude` vom `agm-map`-Element gebunden. */  
   public mittelpunktGeoLaenge = this.mittelpunktDeutschlandGeoLaenge;
 
   /** Array mit Hauptstädten aller 16 Bundesländern in Deutschland; wird als Marker dargestellt. */
@@ -45,5 +45,13 @@ export class HomePage {
     this.hauptstadteArray.push( new Landeshauptstadt("Schleswig-Holstein"    , "Kiel"       , false, "54.32321" , "10.14019"  ) );
     this.hauptstadteArray.push( new Landeshauptstadt("Thüringen"             , "Erfurt"     , false, "50.978056", "11.029167" ) );
   }
+
+  /**
+   * Event-Handler für Klick auf ein Bundesland in der Liste.
+   */
+  public onBundeslandClick(stadt: Landeshauptstadt) {
+    
+    console.log(stadt.getInfoText());
+  }  
 
 }
