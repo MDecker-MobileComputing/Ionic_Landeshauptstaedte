@@ -13,6 +13,9 @@ export class HomePage {
 
   /* Geographische Länge von Mittelpunkt von Deutschland, siehe Berechnungsmethode 1 auf https://de.wikipedia.org/wiki/Mittelpunkte_Deutschlands . */
   readonly mittelpunktDeutschlandGeoLaenge = "10.447683";
+
+  /** Zoomfaktor, bei dem ganz Deutschland auf einmal angezeigt wird. */
+  readonly defaultZoomfaktor = 6;
   
 
   /** Geographische Breite vom aktuellen Mittelpunkt der Karte; wird an Attribut `latitude` vom `agm-map`-Element gebunden. */
@@ -22,7 +25,7 @@ export class HomePage {
   public mittelpunktGeoLaenge = this.mittelpunktDeutschlandGeoLaenge;
 
   /** Zoom-Faktor für geographische Karte. */
-  public zoomFaktor = 6;
+  public zoomFaktor = this.defaultZoomfaktor;
 
 
   /** Array mit je einem Element für alle 16 Bundesländer+Stadtstaaten in Deutschland. */
@@ -64,5 +67,16 @@ export class HomePage {
 
     this.zoomFaktor = 12;
   }  
+
+  /**
+   * Event-Handler für Button "Darstellung zurücksetzen" (rechts oben im Hauptfenster).
+   */
+  public onButtonZuruecksetzen() {
+
+    this.mittelpunktGeoBreite = this.mittelpunktDeutschlandGeoBreite;
+    this.mittelpunktGeoLaenge = this.mittelpunktDeutschlandGeoLaenge;
+  
+    this.zoomFaktor = this.defaultZoomfaktor;
+  }
 
 }
