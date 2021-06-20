@@ -9,6 +9,10 @@ The app can be accessed as [PWA](https://www.freecodecamp.org/news/what-are-prog
 
 <br>
 
+A short video (ca. 45 seconds) showing the app can be found [here](https://youtu.be/AokTkoJKy9k) on YouTube.
+
+<br>
+
 ----
 
 ## License ##
