@@ -5,11 +5,23 @@ For displaying of the geographic map the library [Angular Google Maps (AGM)](htt
 
 <br>
 
-The app can be accessed as [PWA](https://www.freecodecamp.org/news/what-are-progressive-web-apps/) at https://mdecker-mobilecomputing.github.io/Ionic_Landeshauptstaedte
+A short video (ca. 45 seconds) showing the app can be found [here](https://youtu.be/AokTkoJKy9k) on YouTube.
 
 <br>
 
-A short video (ca. 45 seconds) showing the app can be found [here](https://youtu.be/AokTkoJKy9k) on YouTube.
+----
+
+## Testing the app ##
+
+After cloning the repository, enter the following command to download the required dependencies:
+```
+npm install --force
+```
+
+To test the app in the browser, you can enter the following command:
+```
+ionic serve
+```
 
 <br>
 
