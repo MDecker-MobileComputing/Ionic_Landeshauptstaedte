@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { BundeslandUndHauptstadt } from '../bundeslandundhauptstadt';
+
+import { BundeslandUndHauptstadt } from '../bundesland-und-hauptstadt';
 import { AgmInfoWindow } from '@agm/core';
 
 @Component({
@@ -17,12 +18,12 @@ export class HomePage {
 
   /** Zoomfaktor, bei dem ganz Deutschland auf einmal angezeigt wird. */
   readonly defaultZoomfaktor = 6;
-  
+
 
   /** Geographische Breite vom aktuellen Mittelpunkt der Karte; wird an Attribut `latitude` vom `agm-map`-Element gebunden. */
   public mittelpunktGeoBreite = this.mittelpunktDeutschlandGeoBreite;
 
-  /** Geographische Länge vom aktuellen Mittelpunkt der Karte; wird an Attribut `longitude` vom `agm-map`-Element gebunden. */  
+  /** Geographische Länge vom aktuellen Mittelpunkt der Karte; wird an Attribut `longitude` vom `agm-map`-Element gebunden. */
   public mittelpunktGeoLaenge = this.mittelpunktDeutschlandGeoLaenge;
 
   /** Zoom-Faktor für geographische Karte. */
@@ -31,8 +32,8 @@ export class HomePage {
   /** Array mit je einem Element für alle 16 Bundesländer+Stadtstaaten in Deutschland. */
   public bundeslandUndHauptstadtArray:BundeslandUndHauptstadt[] = [];
 
-  /** 
-   * Referenziert das zuletzt geöffnete Info-Windows, damit es geschlossen werden kann (wenn das nächste Info-Windows geöffnet wird, 
+  /**
+   * Referenziert das zuletzt geöffnete Info-Windows, damit es geschlossen werden kann (wenn das nächste Info-Windows geöffnet wird,
    * oder wenn die Darstellung zurückgesetzt wird.
    */
   private previousInfoWindow: AgmInfoWindow = null;
@@ -65,26 +66,26 @@ export class HomePage {
    * Event-Handler für Klick auf ein Bundesland in der Liste.
    */
   public onBundeslandClick(bundeslandUndHauptstadt: BundeslandUndHauptstadt) {
-    
+
     console.log(`Geklickt auf ${bundeslandUndHauptstadt.bundesland}.`);
 
     this.mittelpunktGeoBreite = bundeslandUndHauptstadt.geoBreite;
     this.mittelpunktGeoLaenge = bundeslandUndHauptstadt.geoLaenge;
 
     this.zoomFaktor = 12;
-  }  
+  }
 
   /**
    * Event-Handler für Button "Darstellung zurücksetzen" (rechts oben im Hauptfenster).
    * Die Mittelpunkt der Karte wird wieder auf den Mittelpunkt von Deutschland verschoben und
    * der Zoom-Faktor auf den Default-Wert (mit dem ganz Deutschland auf einmal sichtbar wird)
-   * zurückgesetzt; außerdem wird ein ggf. 
+   * zurückgesetzt; außerdem wird ein ggf.
    */
   public onButtonZuruecksetzen() {
 
     this.mittelpunktGeoBreite = this.mittelpunktDeutschlandGeoBreite;
     this.mittelpunktGeoLaenge = this.mittelpunktDeutschlandGeoLaenge;
-  
+
     this.zoomFaktor = this.defaultZoomfaktor;
 
     if (this.previousInfoWindow != null) {
@@ -97,18 +98,18 @@ export class HomePage {
    * Event-Handler für Klicken auf einen Marker (also eine Hauptstadt).
    * Die Methode sorgt dafür, dass höchstens ein Info-Windows gleichzeitig
    * geöffnet ist (aus Gründen der Übersichtlichkeit).
-   * 
+   *
    * siehe auch: https://stackoverflow.com/a/55873945
    */
   public aufMarkerGeklickt(infoWindow: AgmInfoWindow) {
 
     console.log(`aufMarkerGeklickt: ${infoWindow}`);
-    
+
     if (this.previousInfoWindow != null) {
 
       this.previousInfoWindow.close();
     }
-    
+
     this.previousInfoWindow = infoWindow;
   }
 

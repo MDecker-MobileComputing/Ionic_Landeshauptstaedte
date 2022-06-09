@@ -8,8 +8,8 @@
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item *ngFor="let eintrag of bundeslandUndHauptstadtArray" 
-                  button 
+        <ion-item *ngFor="let eintrag of bundeslandUndHauptstadtArray"
+                  button
                   (click)="onBundeslandClick(eintrag)">
           <ion-label>
            <h2>{{eintrag.bundesland}}</h2>
@@ -31,7 +31,7 @@
           </ion-menu-toggle>
         </ion-buttons>
         <ion-buttons slot="end">
-          <ion-button (click)="onButtonZuruecksetzen()" 
+          <ion-button (click)="onButtonZuruecksetzen()"
                       color="secondary">Darstellung zurücksetzen</ion-button>
         </ion-buttons>
         <ion-title>Karte</ion-title>

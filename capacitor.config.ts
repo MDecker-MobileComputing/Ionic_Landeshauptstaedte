@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'de.mide.ionic.landeshauptstaedte',
-  appName: 'Landeshauptstädte',
+  appId: 'io.ionic.starter',
+  appName: 'Landeshauptstaedte_neu',
   webDir: 'www',
   bundledWebRuntime: false
 };
