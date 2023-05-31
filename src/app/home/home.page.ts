@@ -91,6 +91,7 @@ export class HomePage {
     if (this.previousInfoWindow != null) {
 
       this.previousInfoWindow.close();
+      this.previousInfoWindow = null;
     }
   }
 
