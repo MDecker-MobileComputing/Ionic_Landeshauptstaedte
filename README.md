@@ -11,6 +11,10 @@ A short video (ca. 45 seconds) showing the app can be found [here](https://youtu
 
 <br>
 
+Obsolete, since AGM was not updated since 2020? (see [versions of `@agm/core` on npmjs.com](https://www.npmjs.com/package/@agm/core?activeTab=versions))
+
+<br>
+
 ----
 
 ## Testing the app ##
