@@ -9,6 +9,7 @@
  */
  export class BundeslandUndHauptstadt {
 
+
     /**
      * Wenn `istStadtstatt=true`, dann wird Wert von `bundesland` in `stadt` kopiert.
      */
@@ -42,6 +43,7 @@
             return `Landeshauptstadt von ${this.bundesland}`;
         }
     }
+
 
     /**
      * Liefert Text für kurze Beschreibung unter Listeneintrag zurück.

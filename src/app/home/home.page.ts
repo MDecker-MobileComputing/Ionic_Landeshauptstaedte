@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { BundeslandUndHauptstadt } from '../bundesland-und-hauptstadt';
 import { AgmInfoWindow } from '@agm/core';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
