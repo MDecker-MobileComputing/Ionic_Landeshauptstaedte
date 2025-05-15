@@ -10,7 +10,7 @@
       <ion-list>
         <ion-item *ngFor="let eintrag of bundeslandUndHauptstadtArray"
                   button
-                  (click)="onBundeslandClick(eintrag)">
+                  (click)="onMenueEintragClick(eintrag)">
           <ion-label>
            <h2>{{eintrag.bundesland}}</h2>
            <h3>{{eintrag.getKurzbeschreibungFuerListe()}}</h3>
@@ -39,20 +39,7 @@
     </ion-header>
     <ion-content>
 
-      <agm-map [latitude]="+mittelpunktGeoBreite"
-               [longitude]="+mittelpunktGeoLaenge"
-               [zoom]="zoomFaktor">
-
-        <agm-marker *ngFor="let eintrag of bundeslandUndHauptstadtArray"
-                    [latitude]="+eintrag.geoBreite"
-                    [longitude]="+eintrag.geoLaenge"
-                    (markerClick)="aufMarkerGeklickt(derMarker)">
-
-          <agm-info-window #derMarker>{{eintrag.getTextFuerInfoWindow()}}</agm-info-window>
-
-        </agm-marker>
-
-      </agm-map>
+      <capacitor-google-map id="landkarte"></capacitor-google-map>
 
     </ion-content>
   </section>

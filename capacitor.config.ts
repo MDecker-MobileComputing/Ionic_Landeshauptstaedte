@@ -1,10 +1,9 @@
-import { CapacitorConfig } from '@capacitor/cli';
+import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'Landeshauptstaedte_neu',
-  webDir: 'www',
-  bundledWebRuntime: false
+  appId: 'de.eldecker.ionic.landeshauptstaedte',
+  appName: 'Landeshauptstaedte',
+  webDir: 'www'
 };
 
 export default config;

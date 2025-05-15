@@ -26,9 +26,9 @@
   text-decoration: none;
 }
 
-/** Ohne die folgende Regel wird keine Karte angezeigt. */
-agm-map {
-  height: 100%;
+
+capacitor-google-map {
+  display: inline-block;
   width: 100%;
-  color: black; // Text für Darstellung Info-Windows unter MacOS explizit auf schwarz setzen
+  height: 100%;
 }
