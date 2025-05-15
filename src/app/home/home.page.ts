@@ -102,7 +102,8 @@ export class HomePage implements AfterViewInit {
             });
 
 
-    // "Nadeln" für Landeshauptstädte einzeichnen
+    // "Nadeln" (Marker) für Landeshauptstädte einzeichnen
+    // https://capacitorjs.com/docs/apis/google-maps#marker
 
     for ( const landeshauptstadt of this.bundeslandUndHauptstadtArray ) {
 
@@ -122,7 +123,7 @@ export class HomePage implements AfterViewInit {
    */
   public async onMenueEintragClick( bundeslandUndHauptstadt: BundeslandUndHauptstadt ) {
 
-    console.log( "onBundeslandClick: " + bundeslandUndHauptstadt.bundesland );
+    console.log( "Auf Eintrag in Liste geklickt: " + bundeslandUndHauptstadt.bundesland );
 
     if ( this.googleMapObjekt ) {
 
@@ -131,7 +132,7 @@ export class HomePage implements AfterViewInit {
           lat: bundeslandUndHauptstadt.geoBreite,
           lng: bundeslandUndHauptstadt.geoLaenge
         },
-        zoom: this.defaultZoomFaktor
+        zoom: 12.0
       });
     }
   }

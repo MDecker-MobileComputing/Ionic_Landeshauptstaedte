@@ -32,7 +32,7 @@
      *
      * @returns Text mit Zustandinfo
      */
-    public getTextFuerInfoWindow(): string {
+    public getKurzbeschreibungFuerMarker(): string {
 
         if ( this.istStadtstaat ) {
 
