@@ -16,7 +16,7 @@ import { GOOGLE_MAPS_API_KEY } from "../mein-apikey";
 })
 export class HomePage implements AfterViewInit {
 
-  /** Array mit darzustellenden Landeshauptstädten. */
+  /** Array mit in Menü-Leiste darzustellenden Landeshauptstädten. */
   public bundeslandUndHauptstadtArray:BundeslandUndHauptstadt[] = [];
 
 
@@ -102,8 +102,8 @@ export class HomePage implements AfterViewInit {
             });
 
 
-    // "Nadeln" (Marker) für Landeshauptstädte einzeichnen
-    // https://capacitorjs.com/docs/apis/google-maps#marker
+    // "Nadeln" (Marker) für Landeshauptstädte einzeichnen;
+    // Optionen: https://capacitorjs.com/docs/apis/google-maps#marker
 
     for ( const landeshauptstadt of this.bundeslandUndHauptstadtArray ) {
 
@@ -127,13 +127,15 @@ export class HomePage implements AfterViewInit {
 
     if ( this.googleMapObjekt ) {
 
-      await this.googleMapObjekt.setCamera({
+      const konfigObjekt = {
         coordinate: {
           lat: bundeslandUndHauptstadt.geoBreite,
           lng: bundeslandUndHauptstadt.geoLaenge
         },
         zoom: 12.0
-      });
+      };
+
+      await this.googleMapObjekt.setCamera( konfigObjekt );
     }
   }
 
@@ -145,10 +147,12 @@ export class HomePage implements AfterViewInit {
 
     if ( this.googleMapObjekt ) {
 
-      await this.googleMapObjekt.setCamera({
+      const konfigObjekt = {
         coordinate: this.mittelpunktDeutschland,
         zoom: this.defaultZoomFaktor
-      });
+      };
+
+      await this.googleMapObjekt.setCamera( konfigObjekt );
 
       await this.googleMapObjekt.setMapType( MapType.Normal ); // falls Nutzer Ansicht auf "Satellit" geändert hat
     }
