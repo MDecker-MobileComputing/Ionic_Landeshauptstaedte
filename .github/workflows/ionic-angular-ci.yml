@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - name: Code auschecken
-      uses: actions/checkout@v6.0.2 # neueste Version siehe https://github.com/actions/checkout/releases
+      uses: actions/checkout@v6.0.3 # neueste Version siehe https://github.com/actions/checkout/releases
 
     - name: Node.js einrichten
       uses: actions/setup-node@v6.4.0 # neueste Version siehe https://github.com/actions/setup-node/releases

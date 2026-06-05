@@ -22,8 +22,8 @@
       "es2018",
       "dom"
     ],
-    "useDefineForClassFields": false,
-    "skipLibCheck": true // https://capacitorjs.com/docs/apis/google-maps#typescript-configuration
+    "skipLibCheck": true,
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

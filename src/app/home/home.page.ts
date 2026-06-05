@@ -98,7 +98,7 @@ export class HomePage implements AfterViewInit {
                         config: {
                           center: this.mittelpunktDeutschland,
                           zoom: this.defaultZoomFaktor
-                        },
+                        }
             });
 
 
@@ -114,7 +114,6 @@ export class HomePage implements AfterViewInit {
         }
       });
     }
-
   }
 
 
